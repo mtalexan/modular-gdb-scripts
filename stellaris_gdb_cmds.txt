@@ -1,4 +1,4 @@
-target remote 172.22.82.117:3333
+target remote 172.22.82.154:3333
 monitor reset halt
 echo Loading...\n
 load

@@ -5,7 +5,7 @@ BIN_DIR=$DEVDIR/fs/fs/bin
 LOCAL_DIR=~/local/gdb_scripts/remote
 REMOTE_GDB=debugLaunchTarget.sh
 ELF_TO_DEBUG=$DEVDIR/fs/fs/usr/bin/dmApp
-IPADDR=172.22.182.25
+IPADDR=172.22.82.189
 
 if [ ${#} -ge 3 ] ; then
     IPADDR=$3
