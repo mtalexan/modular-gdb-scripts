@@ -1,0 +1,3 @@
+target remote 172.22.82.141:3333
+monitor reset halt
+monitor stellaris mass_erase 0
