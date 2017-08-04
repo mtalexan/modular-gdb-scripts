@@ -1,6 +1,6 @@
 #! /bin/bash
 
-export PATH=${PATH}:/opt/codesourcery/arm-2009q1-203/bin
+export PATH=${PATH}:/opt/gcc/crosstoolng/5.2.0/arm-none-linux-gnueabi/bin
 
 LIB_DIR=$DEVDIR/fs/fs
 BIN_DIR=$DEVDIR/fs/fs/bin
