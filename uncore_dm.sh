@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH=${PATH}:/opt/codesourcery/arm-2009q1-203/bin
+export PATH=${PATH}:/opt/gcc/crosstoolng/5.2.0/arm-none-linux-gnueabi/bin
 
 ELF_TO_DEBUG=${DEVDIR}/myapps/ksi-dmapp/src/bin/arm/dmApp
 PATH_TO_LIBS=${DEVDIR}/fs/fs/
