@@ -2,10 +2,10 @@
 
 export PATH=${PATH}:/opt/gcc/crosstoolng/5.2.0/arm-none-linux-gnueabi/bin
 
+SCRIPT_DIR=$(readlink -f ${BASH_SOURCE})
+
 LIB_DIR=$DEVDIR/fs/fs
 BIN_DIR=$DEVDIR/fs/fs/bin
-LOCAL_DIR=~/local/gdb_scripts/remote
-REMOTE_GDB=debugLaunchTarget.sh
 ELF_TO_DEBUG=$DEVDIR/fs/fs/usr/bin/dmApp
 IPADDR=172.22.182.25
 
@@ -19,12 +19,8 @@ if [ ${#} -ge 1 ] ; then
     LIB_DIR=$1
 fi
 
-# Only if there's no command-line arguments we'll copy the the remote debugging script to the $DEVDIR
 if [ ${#} -eq 0 ] ; then
-    if [ ! -e $BIN_DIR/$REMOTE_GDB ] ; then
-        cp $LOCAL_DIR/$REMOTE_GDB $BIN_DIR/
-    fi
-    chmod +x $BIN_DIR/$REMOTE_GDB
+    echo "Possible usage: $0 [root-fs-dir [pathed-elf-to-debug  [IP-address-to-connect-to]]]"
 fi
 
 # Make sure the dmApp elf file is accessible
@@ -33,7 +29,7 @@ ls -l $ELF_TO_DEBUG
 
 echo
 echo "Ensure dmApp doesn't start automatically on boot"
-echo "Start the dmApp using the $REMOTE_GDB command on the target."
+echo "Start the dmApp within the gdbserver on the target."
 read -p "Press enter to continue ..."
 
 # if they already provided it as a command line option, don't prompt again
